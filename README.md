@@ -73,15 +73,27 @@ Gt_ALL_Chords_app/
 
 ## Llicència
 
-**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**
+**Polyform Noncommercial License 1.0.0** (Codi obert no comercial)
 
-Aquest projecte és **codi obert però NO comercial**:
-- ✅ **Permès**: Ús personal, educatiu, modificacions, distribució no comercial
-- ✅ **Requisit**: Atribució a l'autor original
-- ✅ **Requisit**: Compartir amb la mateixa llicència (ShareAlike)
-- ❌ **Prohibit**: Ús comercial sense autorització expressa
+Aquest projecte és **codi obert però estrictament NO comercial**:
 
-Consulta el fitxer `LICENSE` per al text complet.
+✅ **Permès**:
+- Ús personal i estudis
+- Ús educatiu i acadèmic
+- Modificacions (amb codi font disponible)
+- Organitzacions sense ànim de lucre
+- Recerca pública
+
+❌ **Prohibit**:
+- Qualsevol ús comercial o amb finalitat de lucre
+- Venda del software o serveis basats en ell
+- Ús per empreses o organitzacions comercials
+
+**Copyleft:** Si distribueixes el codi (modificat o no), has de fer públic el codi font sota la mateixa llicència.
+
+Per a llicències comercials, contacta amb l'autor.
+
+Consulta el fitxer `LICENSE` per al text complet: <https://polyformproject.org/licenses/noncommercial/1.0.0>
 
 ## Autor
 
