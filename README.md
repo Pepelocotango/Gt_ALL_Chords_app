@@ -73,7 +73,15 @@ Gt_ALL_Chords_app/
 
 ## Llicència
 
-Private - Tots els drets reservats
+**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**
+
+Aquest projecte és **codi obert però NO comercial**:
+- ✅ **Permès**: Ús personal, educatiu, modificacions, distribució no comercial
+- ✅ **Requisit**: Atribució a l'autor original
+- ✅ **Requisit**: Compartir amb la mateixa llicència (ShareAlike)
+- ❌ **Prohibit**: Ús comercial sense autorització expressa
+
+Consulta el fitxer `LICENSE` per al text complet.
 
 ## Autor
 
