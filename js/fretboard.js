@@ -85,7 +85,7 @@ function render() {
   }
   
   // Marcadors de trast
-  const dotMarkers = [3, 5, 7, 9, 12, 15, 17];
+  const dotMarkers = [3, 5, 7, 9, 12];
   for (let f = 1; f <= N_FRE; f++) {
     const actual = fretPos + f - 1;
     if (dotMarkers.includes(actual)) {

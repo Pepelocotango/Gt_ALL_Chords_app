@@ -459,11 +459,11 @@ function generateVoicings(rootName, type, limit = Infinity) {
   ];
   
   // Determinar rang de finestres segons filtres de zona
-  let windowStartMin = 1, windowStartMax = 16;
+  let windowStartMin = 1, windowStartMax = 11;
   if (FILTERS.zona === 'baixa' || FILTERS.zona === '1-5') windowStartMax = 5;
   else if (FILTERS.zona === '5-9') { windowStartMin = 3; windowStartMax = 9; }
   else if (FILTERS.zona === '9-12') { windowStartMin = 7; windowStartMax = 12; }
-  else if (FILTERS.zona === '12+') windowStartMin = 12;
+  else if (FILTERS.zona === '12-15') { windowStartMin = 11; windowStartMax = 11; }
   else if (FILTERS.zona === 'mitjana') { windowStartMin = 2; windowStartMax = 9; }
   else if (FILTERS.zona === 'alta') windowStartMin = 7;
   

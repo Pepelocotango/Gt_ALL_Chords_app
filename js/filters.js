@@ -19,7 +19,7 @@ function createFiltersPanel() {
             <option value="1-5">Trasts 1-5</option>
             <option value="5-9">Trasts 5-9</option>
             <option value="9-12">Trasts 9-12</option>
-            <option value="12+">Trast 12+</option>
+            <option value="12-15">Trasts 12-15</option>
           </optgroup>
         </select>
       </div>
