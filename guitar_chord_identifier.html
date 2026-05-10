@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creador d'acords de guitarra</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2 class="sr-only">Identificador d'acords de guitarra interactiu</h2>
+
+  <main class="wrap">
+    <div class="app-title">
+      <div>
+        <h1>Creador i buscador d'acords de guitarra</h1>
+        <p class="subtitle">Marca una posició al diapasó o carrega un acord conegut.</p>
+      </div>
+      <button class="btn" id="btnResetTop" type="button">Esborrar tot</button>
+    </div>
+
+    <section class="panel filtres-panel" id="filtersPanel" aria-label="Filtres de digitacions">
+    </section>
+
+    <section class="panel board-panel" aria-label="Diapasó interactiu">
+      <div class="board-shell">
+        <aside class="board-legend" id="boardLegend" aria-label="Llegenda de funcions harmòniques"></aside>
+        <div class="board-inner">
+          <div class="ind-row" id="indRow"></div>
+          <div class="board-area">
+            <div class="fret-col" id="fretCol"></div>
+            <svg class="svg-board" id="board" width="240" height="292" role="img" aria-label="Diapasó de guitarra"></svg>
+          </div>
+          <div class="snames" id="snames"></div>
+        </div>
+      </div>
+
+      <div class="fret-ctrl">
+        <button class="nav-btn" id="btnDn" type="button" aria-label="Baixar trasts" disabled>&#9664;</button>
+        <div class="fret-lbl" id="fretLbl">Trast 1 (ceja)</div>
+        <button class="nav-btn" id="btnUp" type="button" aria-label="Pujar trasts">&#9654;</button>
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="btnOpen" type="button">Tot obert</button>
+        <button class="btn" id="btnMute" type="button">Tot silenciat</button>
+        <button class="btn btn-clear" id="btnClear" type="button">Netejar</button>
+      </div>
+    </section>
+
+    <aside class="panel side-panel">
+      <div class="mode-toggle mode-toggle-3" id="modeToggle">
+        <button class="mode-btn active" data-mode="build" type="button">
+          <span class="mode-icon">🔨</span>
+          <span class="mode-label">Construir</span>
+          <small>Clica al màstil</small>
+        </button>
+        <button class="mode-btn" data-mode="find" type="button">
+          <span class="mode-icon">🔍</span>
+          <span class="mode-label">Buscar</span>
+          <small>Mostra al màstil</small>
+        </button>
+        <button class="mode-btn" data-mode="tonal" type="button">
+          <span class="mode-icon">🎵</span>
+          <span class="mode-label">Funció</span>
+          <small>Tonalitat</small>
+        </button>
+      </div>
+
+      <div class="result-card" id="result">
+        <div class="empty-msg">Fes clic als punts del diapasó per col·locar els dits</div>
+      </div>
+
+      <div class="control-group root-shift-group hidden" id="rootShiftGroup">
+        <div class="control-label">Reinterpretar acord</div>
+        <div class="select-row">
+          <select id="newRootSelect" aria-label="Nova tònica"></select>
+          <button class="btn btn-small" id="btnApplyRoot" type="button">Aplicar</button>
+        </div>
+        <small class="hint-text">Selecciona una nota de l'acord com a nova tònica</small>
+      </div>
+
+      <div class="control-group find-mode-group" id="findModeGroup">
+        <div class="control-label">Buscar i mostrar</div>
+        <div class="select-row">
+          <select id="rootSelect" aria-label="Nota arrel"></select>
+          <select id="typeSelect" aria-label="Tipus d'acord"></select>
+        </div>
+        <button class="btn btn-show-chord" id="btnShowChord" type="button">Veure al màstil</button>
+        <div class="catalog-count" id="catalogCount"></div>
+      </div>
+
+      <div class="control-group tonal-mode-group hidden" id="tonalModeGroup">
+        <div class="control-label">Funció d'acord al màstil</div>
+        <div class="tonal-mode-tabs" id="tonalModeTabs">
+          <button class="tonal-tab active" data-view="chord" type="button">Per acord</button>
+          <button class="tonal-tab" data-view="scale" type="button">Mapa escala</button>
+        </div>
+        <div class="select-row">
+          <select id="tonalRootSelect" aria-label="Arrel de l'acord"></select>
+          <select id="tonalChordTypeSelect" aria-label="Tipus d'acord"></select>
+        </div>
+        <div class="select-row scale-select-row hidden" id="scaleSelectRow">
+          <select id="tonalScaleRootSelect" aria-label="Tonalitat escala"></select>
+          <select id="tonalScaleTypeSelect" aria-label="Mode escala">
+            <option value="major">Major</option>
+            <option value="minor">Menor</option>
+            <option value="dorian">Dòric</option>
+            <option value="mixolydian">Mixolidi</option>
+            <option value="lydian">Lídic</option>
+          </select>
+        </div>
+        <button class="btn btn-show-chord" id="btnShowTonalChord" type="button">Mostrar funcions al màstil</button>
+        <div class="tonal-legend" id="tonalLegend"></div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label">Posicions habituals <span id="presetCount" class="preset-count"></span></div>
+        <select class="preset-select" id="presetSelect"></select>
+      </div>
+
+      <div class="details" id="details">
+        <div class="detail-line"><strong>Consell:</strong> fes clic a O/X per obrir o silenciar una corda.</div>
+      </div>
+    </aside>
+
+    <section class="panel docs-panel" aria-label="Documentació interactiva">
+      <div class="docs-head">
+        <div>
+          <div class="docs-title">Centre d'estudi</div>
+          <p class="subtitle">Acords, màstil, harmonia, ritme i flamenc integrats al projecte.</p>
+        </div>
+        <div class="docs-tools">
+          <input class="search-input" id="docSearch" type="search" placeholder="Cerca dins la documentació" aria-label="Cerca documentació">
+        </div>
+      </div>
+      <div class="doc-tabs" id="docTabs"></div>
+      <div class="docs-grid">
+        <div class="doc-list" id="docList"></div>
+        <div class="doc-viewer" id="docViewer"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mòduls JavaScript -->
+  <script src="js/chordData.js"></script>
+  <script src="js/presets.js"></script>
+  <script src="js/chordEngine.js"></script>
+  <script src="js/fretboard.js"></script>
+  <script src="js/circleOfFifths.js"></script>
+  <script src="js/chromaticScale.js"></script>
+  <script src="js/flamencoDict.js"></script>
+  <script src="js/studyCenter.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/presetsUI.js"></script>
+  <script src="js/tonalFunction.js"></script>
+  <script src="js/modeManager.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+    // Inicialització
+    document.addEventListener('DOMContentLoaded', () => {
+      initControls();
+      initModeManager();
+      render();
+    });
+  </script>
+</body>
+</html>

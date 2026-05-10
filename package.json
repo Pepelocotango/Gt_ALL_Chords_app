@@ -1,0 +1,48 @@
+{
+  "name": "guitar-chord-creator",
+  "version": "1.0.0",
+  "description": "Creador i buscador d'acords de guitarra per Linux",
+  "author": "peplx",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build:appimage": "electron-builder --linux AppImage"
+  },
+  "build": {
+    "appId": "cat.peplx.guitar-chord-creator",
+    "productName": "Creador d'Acords de Guitarra",
+    "files": [
+      "main.js",
+      "guitar_chord_identifier.html",
+      "styles.css",
+      "js/chordData.js",
+      "js/presets.js",
+      "js/chordEngine.js",
+      "js/fretboard.js",
+      "js/circleOfFifths.js",
+      "js/chromaticScale.js",
+      "js/flamencoDict.js",
+      "js/studyCenter.js",
+      "js/filters.js",
+      "js/presetsUI.js",
+      "js/ui.js",
+      "assets/**/*",
+      "documentacio_per _treball/**/*"
+    ],
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Audio",
+      "icon": "assets/icon.png"
+    },
+    "appImage": {
+      "artifactName": "Creador-d-Acords-de-Guitarra-${version}.${ext}"
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  }
+}
