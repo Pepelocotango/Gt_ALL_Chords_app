@@ -1,3 +1,7 @@
+# Autor
+
+Pëp pepelocotango@gmail.com
+
 # Creador d'Acords de Guitarra
 
 Aplicació d'escriptori per a Linux per crear, buscar i estudiar acords de guitarra.
@@ -98,3 +102,7 @@ Consulta el fitxer `LICENSE` per al text complet: <https://polyformproject.org/l
 ## Autor
 
 **peplx**
+
+## Llicència
+
+Aquest projecte està llicenciat sota la llicència **GNU General Public License v3.0**. Consulta el fitxer [LICENSE](LICENSE) per obtenir més detalls.
